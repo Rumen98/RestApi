@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+      $("tr").hover(function(){
+          $(this).css("background-color", "yellow");
+          }, function(){
+          $(this).css("background-color", "pink");
+      });
+  });
+  $(document).ready(function(){
+    $("#qko").click(function(){
+        $("#tables").css("color", "red").slideUp(2000).slideDown(2000);
+    });
+});
+  </script>
+
+
 		<title>-REST API CRUD</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
@@ -16,7 +33,7 @@
 				<button type="button" name="add_button" id="add_button" class="btn btn-success btn-xs">Add</button>
 			</div>
 
-			<div class="table-responsive">
+			<div class="table-responsive" id="tables">
 				<table class="table table-bordered table-striped">
 					<thead>
 						<tr>
@@ -33,6 +50,7 @@
 					<tbody></tbody>
 				</table>
 			</div>
+			<button id="qko">Яко</button>
 		</div>
 	</body>
 </html>
