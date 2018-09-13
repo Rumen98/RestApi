@@ -15,6 +15,14 @@
         $("#tables").css("color", "red").slideUp(2000).slideDown(2000);
     });
 });
+  $(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
   </script>
 
 
@@ -34,8 +42,10 @@
 			</div>
 
 			<div class="table-responsive" id="tables">
+				<input id="myInput" type="text" placeholder="Search..">
+<br><br>
 				<table class="table table-bordered table-striped">
-					<thead>
+					<thead >
 						<tr>
 							<th>First Name</th>
 							<th>Last Name</th>
@@ -47,7 +57,7 @@
 							<th>Delete</th>
 						</tr>
 					</thead>
-					<tbody></tbody>
+					<tbody id="myTable"></tbody>
 				</table>
 			</div>
 			<button id="qko">Яко</button>
